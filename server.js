@@ -30,3 +30,7 @@ mongoose.connect(
 app.listen(PORT, () =>
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 );
+
+if (process.env.Node_Env == "production") {
+  app.use(express.static("client/build"));
+}
